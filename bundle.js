@@ -6,19 +6,42 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-alert("Teste");
+/* 
+Métodos estáticos não veem o restante da classe, por isso,
+o this.todos não é alcançado
+*/
+// class TodoList {
+//      constructor() {
+//         this.todos = [];
+//     }
+//     static addTodo() {
+//         this.todos.push('Novo ToDo');
+//         console.log(this.todos);
+//     }
+// }
+// TodoList.addTodo();
 
-var Teste =
+/*
+Por esse motivo, a classe acima não é utilizada da maneira correta
+pois os métodos static são mais para utilidades
+As classes com métodos static não necessitam de instanciação 
+para execução do seu método
+ */
+var Matematica =
 /*#__PURE__*/
 function () {
-  function Teste() {
-    _classCallCheck(this, Teste);
+  function Matematica() {
+    _classCallCheck(this, Matematica);
   }
 
-  _createClass(Teste, [{
-    key: "metodo",
-    value: function metodo() {}
+  _createClass(Matematica, null, [{
+    key: "soma",
+    value: function soma(a, b) {
+      return a + b;
+    }
   }]);
 
-  return Teste;
+  return Matematica;
 }();
+
+console.log(Matematica.soma(1, 2));
