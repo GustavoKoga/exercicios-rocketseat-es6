@@ -1,14 +1,13 @@
-// // Uma constante não pode ter seu valor alterado
+// Uma constante não pode ter seu valor alterado
 // const a = 1;
 // var b = 2;
 
-// // Mutar uma varivavel
-
+// Mutar uma varivavel
 // const usuario = {
 //     nome: 'Gustavo'
 // };
-
 // usuario.nome = 'Teste';
+// Esta operação é permitida pois não alteramos o usuário, mas sim o nome dele
 
 function teste(a) {
     /*

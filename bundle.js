@@ -1,47 +1,33 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// // Uma constante não pode ter seu valor alterado
+// const a = 1;
+// var b = 2;
+// // Mutar uma varivavel
+// const usuario = {
+//     nome: 'Gustavo'
+// };
+// usuario.nome = 'Teste';
+function teste(a) {
+  /*
+  Onde o let é uma variável de escopo e só pode ser acessada
+  dentro deste escopo
+  Escopo é um pedaço de código cercado pelas chaves ({})
+  ou uma classe, arquivo, função etc
+  */
+  var y = 2;
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/* 
-Métodos estáticos não veem o restante da classe, por isso,
-o this.todos não é alcançado
-*/
-// class TodoList {
-//      constructor() {
-//         this.todos = [];
-//     }
-//     static addTodo() {
-//         this.todos.push('Novo ToDo');
-//         console.log(this.todos);
-//     }
-// }
-// TodoList.addTodo();
-
-/*
-Por esse motivo, a classe acima não é utilizada da maneira correta
-pois os métodos static são mais para utilidades
-As classes com métodos static não necessitam de instanciação 
-para execução do seu método
- */
-var Matematica =
-/*#__PURE__*/
-function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
+  if (a > 5) {
+    var _y = 5;
+    console.log('Dentro do escopo do if');
+    console.log(a, _y);
   }
 
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
+  console.log('Dentro do escopo da função');
+  console.log(a, y);
+}
 
-  return Matematica;
-}();
-
-console.log(Matematica.soma(1, 2));
+var a = 10;
+teste(a);
+console.log('Escopo do arquivo');
+console.log();
